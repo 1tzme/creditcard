@@ -19,7 +19,7 @@ func main() {
 	case "validate":
 		features.Validate(args)
 	case "generate":
-		features.Generate()
+		features.Generate(args)
 	default:
 		fmt.Println("Unknown comman: ", command)
 	}
