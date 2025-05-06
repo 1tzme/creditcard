@@ -15,8 +15,5 @@ func luhnAlgorithm(number string) bool {
 
 		isSecond = !isSecond
 	}
-	if sum%10 == 0 {
-		return true
-	}
-	return false
+	return sum%10 == 0
 }
