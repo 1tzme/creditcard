@@ -54,7 +54,7 @@ func Information(args []string) {
 		card = strings.ReplaceAll(card, " ", "")
 		fmt.Println(card)
 
-		if len(card) < 13 || luhnAlgorithm(card) == false {
+		if len(card) < 13 || !luhnAlgorithm(card) {
 			fmt.Println("Correct: no")
 			fmt.Println("Card Brand: -")
 			fmt.Println("Card Issuer: -")
