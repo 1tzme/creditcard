@@ -6,7 +6,6 @@ import (
 	"os"
 	"strconv"
 	"strings"
-	"time"
 )
 
 // card issuance by specific brand and issuer
@@ -33,8 +32,20 @@ func Issue(args []string) {
 		}
 	}
 
-	if brandsFile == "" || issuersFile == "" || brand == "" || issuer == "" {
-		fmt.Println("Missing flag")
+	if brandsFile == "" {
+		fmt.Println("Missing flag --brands")
+		os.Exit(1)
+	}
+	if issuersFile == "" {
+		fmt.Println("Missing flag --issuers")
+		os.Exit(1)
+	}
+	if brand == "" {
+		fmt.Println("Missing flag --brand")
+		os.Exit(1)
+	}
+	if issuer == "" {
+		fmt.Println("Missing flag --issuer")
 		os.Exit(1)
 	}
 
@@ -56,7 +67,6 @@ func Issue(args []string) {
 		os.Exit(1)
 	}
 
-	rand.Seed(time.Now().UnixNano())
 	brandPref := brandsPrefs[rand.Intn(len(brandsPrefs))]
 	issuerPref := issuersPrefs[rand.Intn(len(issuersPrefs))]
 

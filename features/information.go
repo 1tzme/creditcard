@@ -30,8 +30,12 @@ func Information(args []string) {
 		}
 	}
 
-	if brandsFile == "" || issuersFile == "" {
-		fmt.Println("Missing flags --brands and --issuer")
+	if brandsFile == "" {
+		fmt.Println("Missing flag --brand")
+		os.Exit(1)
+	}
+	if issuersFile == "" {
+		fmt.Println("Missing flag --issuer")
 		os.Exit(1)
 	}
 

@@ -5,7 +5,6 @@ import (
 	"os"
 	"strings"
 	"math/rand"
-	"time"
 )
 
 // generate card numbers by given pattern
@@ -79,7 +78,6 @@ func Generate(args []string) {
 	}
 
 	if pick {
-		rand.Seed(time.Now().UnixNano())
 		selectedNumber := validCards[rand.Intn(len(validCards))]
 		fmt.Println(selectedNumber)
 	} else {
