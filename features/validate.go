@@ -1,8 +1,8 @@
 package features
 
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
 	"strings"
 )

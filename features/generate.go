@@ -2,9 +2,9 @@ package features
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strings"
-	"math/rand"
 )
 
 // generate card numbers by given pattern
@@ -16,7 +16,7 @@ func Generate(args []string) {
 
 	pick := false
 	pattern := ""
-	
+
 	if args[0] == "--pick" {
 		pick = true
 
